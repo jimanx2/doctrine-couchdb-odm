@@ -43,7 +43,7 @@ function (doc)
         var indexes = doc.doctrine_metadata.indexes;
         for ( idx in indexes ) {
             if (doc[indexes[idx]] != null) {
-                emit([doc.type, indexes[idx], doc[indexes[idx]]], {"_id": doc._id} );
+                emit([doc.doctrine_type, indexes[idx], doc[indexes[idx]]], {"_id": doc._id} );
             }
         }
     }
@@ -53,10 +53,8 @@ JS;
         $mapRepositoryTypeConstraint = <<<'JS'
 function (doc)
 {
-    if (doc.type
-        && doc.doctrine_metadata
-        && doc.doctrine_metadata.indexed) {
-        emit(doc.type, {"_id": doc._id} );
+    if (doc.doctrine_type) {
+        emit(doc.doctrine_type, {"_id": doc._id} );
     }
 }
 JS;
