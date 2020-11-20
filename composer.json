@@ -1,5 +1,5 @@
 {
-    "name": "doctrine/couchdb-odm",
+    "name": "jimanx2/doctrine-couchdb-odm",
     "type": "library",
     "description": "CouchDB Document Object Mapper",
     "keywords": ["persistence", "couchdb"],
