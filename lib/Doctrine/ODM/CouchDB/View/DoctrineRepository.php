@@ -41,9 +41,17 @@ function (doc)
         && doc.doctrine_metadata.indexes
     ) {
         var indexes = doc.doctrine_metadata.indexes;
+        var comps; var doc2;
         for ( idx in indexes ) {
-            if (doc[indexes[idx]] != null) {
-                emit([doc.doctrine_type, indexes[idx], doc[indexes[idx]]], {"_id": doc._id} );
+            comps = indexes[idx].split(".");
+            if (doc[comps[0]] != null) {
+                doc2 = doc[comps[0]];
+                if( comps.length > 1 ) {
+                  for(ik=1; ik<comps.length; ik+=1) {
+                    doc2 = doc2[comps[ik]];
+                  }
+                }
+                emit([doc.doctrine_type, indexes[idx], doc2] , {"_id": doc._id});
             }
         }
     }
