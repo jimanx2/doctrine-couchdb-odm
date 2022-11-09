@@ -10,9 +10,9 @@
         {"name": "Lukas Kahwe Smith", "email": "smith@pooteeweet.org"}
     ],
     "require": {
-        "php": ">=5.3.2",
-        "jimanx2/doctrine-common": "dev-master",
-        "doctrine/couchdb": "1.0.0-beta4",
+        "php": ">=8.1",
+        "doctrine/common": "2.13.3",
+        "doctrine/couchdb": "@dev",
         "symfony/console": ">=2.0",
         "doctrine/instantiator": "~1.0"
     },
