@@ -10,7 +10,7 @@
         {"name": "Lukas Kahwe Smith", "email": "smith@pooteeweet.org"}
     ],
     "require": {
-        "php": ">=8.1",
+        "php": "^5.6|>=8.1",
         "doctrine/common": "2.13.3",
         "doctrine/couchdb": "@dev",
         "symfony/console": ">=2.0",
